@@ -1,4 +1,4 @@
-# rpi-pico-ir-controlled-rgb-light
+# RPi Pico IR controlled RGB light
 
 RGB light controlled by a Raspberry Pi Pico via Infrared
 

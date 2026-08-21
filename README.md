@@ -4,11 +4,73 @@ RGB light controlled by a Raspberry Pi Pico via Infrared
 
 # Setup
 
-## 1. Install MicroPython on the Raspberry Pi Pico
+## 1. Hardware
+
+Hardware I used (with links to similar products):
+
+ - Raspberry Pi Pico (version 1) ([BerryBase](https://www.berrybase.de/en/raspberry-pi-pico-rp2040-microcontroller-board-with-headers))
+ - 4-Pin RGB-LED (common anode)
+ - IR-receiver ([BerryBase](https://www.berrybase.de/en/ir-receiver-receiver-38khz-with-breakout-board))
+ - IR-remote
+
+## 2. LED trap
+
+You can get the 4 pin LEDs as common anode or common cathode versions
+
+This repo defaults to common anode, but also has instructions for common cathode
+
+## 3. Wiring
+
+`Ω` represents a 220Ω resistor
+
+
+Common anode:
+```
+                   IR-receiver
+                 (OUT, GND, VCC)        LED
+                      +---+        (R, VCC, G, B)
+   RPi Pico           +-+-+           +-----+
+    +---+             | | |           +-+-+-+
++---'   '---+         | | |           | | | |
+|     3V3 > |---------|-|-+-----------|-+ | |
+|           |         | |             |   | |
+|     GND > |---------|-+             Ω   Ω Ω
+|           |         |               |   | |
+| GPIO 22 > |---------|---------------|---|-+
+| GPIO 21 > |---------+               |   |
+| GPIO 20 > |-------------------------|---+
+|           |                         |
+| GPIO 18 > |-------------------------+
+|           |
++-----------+
+```
+
+Common cathode:
+```
+                   IR-receiver
+                 (OUT, GND, VCC)        LED
+                      +---+        (R, VCC, G, B)
+   RPi Pico           +-+-+           +-----+
+    +---+             | | |           +-+-+-+
++---'   '---+         | | |           | | | |
+|     3V3 > |---------|-|-+           Ω | Ω Ω
+|           |         | |             | | | |
+|     GND > |---------|-+-------------|-+ | |
+|           |         |               |   | |
+| GPIO 22 > |---------|---------------|---|-+
+| GPIO 21 > |---------+               |   |
+| GPIO 20 > |-------------------------|---+
+|           |                         |
+| GPIO 18 > |-------------------------+
+|           |
++-----------+
+```
+
+## 4. Install MicroPython on the Raspberry Pi Pico
 
 You can find the download links [here](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html)
 
-## 2. Upload code
+## 5. Upload code
 
 Upload this repositories `main.py` file
 
@@ -28,9 +90,9 @@ ir_rx
     /nec.py
 ```
 
-## 3. Modify code
+## 6. Modify code
 
-### 3.1 Change the GPIO Pins to match your setup
+### 6.1 Change the GPIO Pins to match your setup
 
 ```py
 # GPIO Pins on the Raspberry Pi Pico
@@ -40,7 +102,7 @@ PIN_BLUE = 22
 PIN_IR = 21
 ```
 
-### 3.2 Change the colors and data/addr attributes (if required)
+### 6.2 Change the colors and data/addr attributes (if required)
 
 The colors are in the format `[red, green, blue]`
 

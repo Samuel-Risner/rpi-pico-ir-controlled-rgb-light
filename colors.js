@@ -1,4 +1,11 @@
-const MAX_FREQUENCY = 65536-1;
+// Make sure to adjust these 3 values to your needs
+// See README.md for info
+
+const ADDR = "ef00";
+const DATA_TO_SKIP = [11, 15, 19, 23];
+const HEX_START = 8; // (in decimal, not in hex)
+
+const MAX_FREQUENCY = 65535;
 const INVERT = true;
 const FREQUENCY_STEP = MAX_FREQUENCY / 255;
 
@@ -11,6 +18,8 @@ const COLORS = [
 ];
 
 /**
+ * Converts a rgb-string to a numbers list
+ * 
  * @param {string} color
  * @returns {number[]}
  */
@@ -29,6 +38,8 @@ function extractNumbers(color) {
 }
 
 /**
+ * Converts an rgb value (0-255) to a frequency value (0-65535)
+ * 
  * @param {number} num 
  * @returns {number}
  */
@@ -41,11 +52,17 @@ function numberToFrequency(num) {
     return n;
 }
 
-const numsToSkip = [11, 15, 19, 23];
-let curNum = 8;
+let curNum = HEX_START;
 
+/**
+ * Returns a continuously increasing hex value starting at `HEX_START`
+ * 
+ * Numbers in `DATA_TO_SKIP` are skipped and instead the next greater value is returned
+ * 
+ * @returns {string} hex string
+ */
 function getHex() {
-    if (numsToSkip.includes(curNum)) curNum++;
+    if (DATA_TO_SKIP.includes(curNum)) curNum++;
 
     let hex = Number(curNum++).toString(16);
     if (hex.length === 1) hex = "0" + hex;
@@ -56,7 +73,7 @@ function getHex() {
 let finished = "";
 
 for (const color of COLORS) {
-    finished += `    "${getHex()}-ef00": [`;
+    finished += `    "${getHex()}-${ADDR}": [`;
 
     for (const num of extractNumbers(color)) {
         finished += `${numberToFrequency(num)},`;

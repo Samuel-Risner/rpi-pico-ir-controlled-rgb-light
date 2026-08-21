@@ -6,11 +6,10 @@ const DATA_TO_SKIP = [11, 15, 19, 23];
 const HEX_START = 8; // (in decimal, not in hex)
 
 const MAX_FREQUENCY = 65535;
-const INVERT = true;
+const INVERT = true; // common anode -> true; common cathode -> false
 const FREQUENCY_STEP = MAX_FREQUENCY / 255;
 
 const COLORS = [
-    // "rgb(255, 0, 0)", "rgb(0, 255, 0)", "rgb(0, 0, 255)", "rgb(255, 255, 255)",
     "rgb(255, 51, 0)", "rgb(13, 145, 42)", "rgb(16, 102, 201)",
     "rgb(255, 145, 0)", "rgb(0, 255, 255)", "rgb(122, 32, 206)",
     "rgb(255, 187, 0)", "rgb(20, 187, 199)", "rgb(119, 35, 168)",

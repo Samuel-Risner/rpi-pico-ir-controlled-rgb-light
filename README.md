@@ -6,6 +6,8 @@ RGB light controlled by a Raspberry Pi Pico via Infrared
 
 ## 1. Install MicroPython on the Raspberry Pi Pico
 
+You can find the download links [here](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html)
+
 ## 2. Upload code
 
 Upload this repositories `main.py` file

@@ -81,6 +81,6 @@ ACTIONS = {
 
 This project is licensed under the GPL-3.0 license (see the file `LICENSE` for more information)
 
-The folder `micropython_ir` is excluded from this license, since it is licensed by Peter Hinch under the MIT license
+The folder `micropython_ir` is excluded from this license, since the files inside of it are licensed by Peter Hinch under the MIT license
 
-You can find his repository with the original code [here](https://github.com/peterhinch/micropython_ir) and a copy of the MIT license in the folder `micropython_ir` in the file `LICENSE`
+You can find his repository with the original and complete code [here](https://github.com/peterhinch/micropython_ir) and a copy of the MIT license in the folder `micropython_ir` in the file `LICENSE`

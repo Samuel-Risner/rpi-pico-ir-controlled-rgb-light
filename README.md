@@ -12,6 +12,8 @@ Upload this repositories `main.py` file
 
 And some files from [Peter Hinch's](https://github.com/peterhinch) repository [micropython_ir](https://github.com/peterhinch/micropython_ir) to the folder `ir_nx`:
 
+(You can also find the files in this repository under `micropython_ir`)
+
  - `ir_rx/init.py`
  - `ir_rx/nec.py`
 
@@ -72,3 +74,11 @@ ACTIONS = {
     "16-ef00": [5397,65535,0],
 }
 ```
+
+# License
+
+This project is licensed under the GPL-3.0 license (see the file `LICENSE` for more information)
+
+The folder `micropython_ir` is excluded from this license, since it is licensed by Peter Hinch under the MIT license
+
+You can find his repository with the original code [here](https://github.com/peterhinch/micropython_ir) and a copy of the MIT license in the folder `micropython_ir` in the file `LICENSE`

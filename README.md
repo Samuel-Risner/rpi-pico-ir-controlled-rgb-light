@@ -11,7 +11,7 @@ Hardware I used (with links to similar products):
  - Raspberry Pi Pico (version 1) ([BerryBase](https://www.berrybase.de/en/raspberry-pi-pico-rp2040-microcontroller-board-with-headers))
  - 4-Pin RGB-LED (common anode)
  - IR-receiver ([BerryBase](https://www.berrybase.de/en/ir-receiver-receiver-38khz-with-breakout-board))
- - IR-remote
+ - IR-remote ([image](images/ir_remote.jpeg))
 
 ## 2. LED trap
 

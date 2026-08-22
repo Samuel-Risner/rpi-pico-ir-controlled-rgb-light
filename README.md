@@ -12,6 +12,8 @@ Hardware I used (with links to similar products):
  - 4-Pin RGB-LED (common anode)
  - IR-receiver ([BerryBase](https://www.berrybase.de/en/ir-receiver-receiver-38khz-with-breakout-board))
  - IR-remote ([image](images/ir_remote.jpeg))
+ - 3 transistors 220Ω
+ - wiring (jumper cables & breadboard)
 
 ## 2. LED trap
 
